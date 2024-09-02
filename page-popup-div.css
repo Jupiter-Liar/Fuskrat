@@ -1,0 +1,160 @@
+/* Reset styles for the shadow DOM root */
+:host {
+	all: initial;
+}
+
+#popup-container {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	transition-property: width, height, max-width, max-height;
+	transition-duration: 500ms;
+	transition-timing-function: ease-in-out;
+	width: 75vw;
+	height: 75vh;
+	max-width: 1024px;
+	max-height: 768px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	border: 2px solid blue;
+	padding: 24px;
+	box-sizing: border-box;
+	overflow: auto;
+	/* Ensure content can scroll if needed */
+	position: relative;
+	font-family: sans-serif;
+	font-size: 14px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+#popup-container:has(#gallery-outer) {
+	width: 95vw;
+	height: 95vh;
+	max-width: 95vw;
+	max-height: 95vh;
+}
+
+#popup-image {
+	max-width: calc(100% - 48px);
+	max-height: calc(100% - 72px);
+	display: block;
+	margin: 0 auto;
+	/* Center the image */
+	padding: 24px;
+	/* Add padding around the image */
+	order: 1;
+}
+
+#close-button {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 24px;
+	height: 24px;
+	background-color: red;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 24px;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#close-button:hover {
+	background-color: darkred;
+}
+
+#url-selection-explanation {
+	margin: 16px auto 0;
+	font-weight: 600;
+	order: 2;
+}
+
+#url-container {
+	margin: 4px auto 0;
+	font-family: monospace;
+	word-wrap: break-word;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	order: 3;
+}
+
+.url-number {
+	cursor: pointer;
+	background-color: hsl(0, 0%, 85%);
+	padding: 2px 4px;
+	border-radius: 4px;
+	transition: background-color 0.2s ease;
+	white-space: nowrap;
+	/* Prevent breaking */
+}
+
+.url-number:hover,
+.url-number[selected]:hover {
+	background-color: hsl(0, 100%, 75%);
+}
+
+.url-number[selected] {
+	background-color: hsl(300, 75%, 65%);
+	box-shadow: inset 0px 0px 2px black;
+}
+
+#hex-container {
+	display: flex;
+	align-items: center;
+	margin-left: 16px;
+	/* Remove vertical padding and margins */
+}
+
+#hex-container input[type="checkbox"] {
+	margin-right: 8px;
+}
+
+#hex-container label {
+	font-family: sans-serif;
+	margin: 0;
+	/* Remove vertical margin */
+}
+
+#fusking-range {
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	width: fit-content;
+	/* min-width: 8px; */
+	/* min-height: 8px; */
+	margin: 12px auto 0;
+	gap: 6px;
+	align-items: center;
+	order: 4;
+}
+
+#fusking-range input {
+	width: 10em;
+	border: 1px solid black;
+	border-radius: 3px;
+	text-align: center;
+}
+
+#button-div {
+	margin: 12px auto 0;
+	gap: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	width: fit-content;
+	order: 5;
+}
+
+#output {
+	order: 6;
+	margin-top: 24px;
+}

@@ -1,0 +1,26 @@
+{
+	"manifest_version": 3,
+	"name": "Fuskrat",
+	"version": "1.0.0",
+	"description": "Right-click an image to fusk its URL and generate a gallery.",
+	"permissions": ["contextMenus", "activeTab", "scripting", "storage"],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"web_accessible_resources": [
+		{
+			"resources": ["fusking.js", "create-gallery.js", "page-popup-div.css", "gallery.css", "gallery.html", "gallery.html", "gallery-page.css"],
+			"matches": ["<all_urls>"]
+		}
+	],
+	"icons": {
+		"16": "icons/icon16.png",
+		"19": "icons/icon19.png",
+		"32": "icons/icon32.png",
+		"38": "icons/icon38.png",
+		"48": "icons/icon48.png",
+		"64": "icons/icon64.png",
+		"128": "icons/icon128.png",
+		"256": "icons/icon256.png"
+	}
+}

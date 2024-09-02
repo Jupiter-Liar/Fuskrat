@@ -1,0 +1,12 @@
+#error-div {
+	font-size: 2em;
+	font-family: monospace;
+	position: fixed;
+	left: 50vw;
+	top: 35vh;
+	translate: -50% -50%;
+	display: flex;
+	flex-wrap: wrap;
+	width: fit-content;
+	max-width: 75vw;
+}

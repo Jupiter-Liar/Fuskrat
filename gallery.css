@@ -1,0 +1,57 @@
+/* gallery.css */
+
+#gallery-outer {
+	margin-bottom: 10px;
+	margin-top: 16px;
+	display: flex;
+	flex-direction: column;
+}
+
+#controls-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+#reload-failed-images {
+	margin-right: 16px;
+	/* Optional: Adds a little space between the button and the input */
+}
+
+#grid-width-control-div {
+	margin-left: auto;
+}
+
+#grid-width-span {
+	margin-right: 1em;
+}
+
+#grid-width {
+	margin-bottom: 10px;
+	width: 4em;
+}
+
+#gallery-inner {
+	display: grid;
+	gap: 10px;
+	/* Adjust the gap between images */
+}
+
+.gallery-cell {
+	box-sizing: border-box;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.gallery-cell img {
+	max-width: 100%;
+	margin: 5px;
+}
+
+.gallery-cell span {
+	display: block;
+	word-break: break-all;
+	/* Handle long URLs */
+}
