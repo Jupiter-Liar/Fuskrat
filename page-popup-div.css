@@ -49,9 +49,11 @@
 }
 
 #close-button {
-	position: absolute;
-	top: 8px;
-	right: 8px;
+	/*	position: absolute;*/
+	/*	top: 8px;*/
+	/*	right: 8px;*/
+	position: sticky;
+	top: 0;
 	width: 24px;
 	height: 24px;
 	background-color: red;
