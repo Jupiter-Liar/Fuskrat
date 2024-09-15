@@ -54,6 +54,7 @@
 	/*	right: 8px;*/
 	position: sticky;
 	top: 0;
+	margin-left: auto;
 	width: 24px;
 	height: 24px;
 	background-color: red;
