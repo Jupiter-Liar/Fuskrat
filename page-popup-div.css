@@ -39,7 +39,7 @@
 
 #popup-image {
 	max-width: calc(100% - 48px);
-	max-height: calc(100% - 72px);
+	max-height: calc(100% - 160px);
 	display: block;
 	margin: 0 auto;
 	/* Center the image */
@@ -48,28 +48,109 @@
 	order: 1;
 }
 
-#close-button {
-	/*	position: absolute;*/
-	/*	top: 8px;*/
-	/*	right: 8px;*/
+#sticky-header {
 	position: sticky;
 	top: 0;
-	margin-left: auto;
-	width: 24px;
-	height: 24px;
+}
+
+#close-button,
+#about-close-button {
+	/*	top: 8px;*/
+	/*	right: 8px;*/
+	right: 0;
 	background-color: red;
 	color: white;
 	font-size: 18px;
+}
+
+#about-button {
+	left: 0;
+	line-height: 0.8;
+	font-size: 16px;
+	background: hsl(240, 100%, 75%);
+	color: white;
+}
+
+#close-button,
+#about-button,
+#about-close-button {
+	top: 0;
+	position: absolute;
 	font-weight: bold;
 	text-align: center;
-	line-height: 24px;
 	border-radius: 50%;
-	cursor: pointer;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#about-close-button {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	font-size: 16px;
+	width: 20px;
+	height: 20px;
+}
+
+#about-details {
+	text-align: left;
+}
+
+#about-details img {
+	vertical-align: middle;
+	margin-left: 0.75em;
+}
+
+#about-details > * {
+	margin: 0.75em 0;
+}
+
+#about-details > span {
+	margin-bottom: 1em;
+	height: fit-content;
+	display: flex;
+}
+
+#about-details div img {
+	height: 24px;
+}
+
+#about-details a {
+	text-decoration: none;
 }
 
 #close-button:hover {
 	background-color: darkred;
+}
+
+#about-button:hover {
+	background-color: darkblue;
+}
+
+#about-div {
+	position: absolute;
+	margin: auto;
+	background: white;
+	left: 50%;
+	top: 50%;
+	translate: -50% -50%;
+	border: 2px solid blue;
+	border-radius: 10px;
+	padding: 16px 24px;
+	width: 360px;
+	max-width: 75%;
+	font-size: 19px;
+}
+
+#about-div h2 {
+	margin: 0;
+	font-size: 1.33em;
 }
 
 #url-selection-explanation {

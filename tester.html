@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fusking Mini Project</title>
+	<link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+	<div>
+		<input type="text" id="prefix" placeholder="Prefix">
+		<input type="text" id="replace" placeholder="Number to Replace">
+		<input type="text" id="suffix" placeholder="Suffix">
+	</div>
+	<div>
+		<input type="text" id="begin-range" placeholder="Begin Range">
+		<span>to</span>
+		<input type="text" id="end-range" placeholder="End Range">
+	</div>
+	<div>
+		<input type="checkbox" id="hex">
+		<label for="hex">Hex</label>
+	</div>
+	<div>
+		<button id="fusk-button">Get Fusking URLs</button>
+	</div>
+	<div id="output"></div>
+
+	<script src="fusking.js"></script>
+	<script src="create-gallery.js"></script>
+	<script>
+		// Handling the button click event
+		document.getElementById('fusk-button').addEventListener('click', () => {
+			// Get values from input fields
+			const prefix = document.getElementById('prefix').value;
+			const replace = document.getElementById('replace').value;
+			const suffix = document.getElementById('suffix').value;
+			const beginRange = document.getElementById('begin-range').value;
+			const endRange = document.getElementById('end-range').value;
+			const hex = document.getElementById('hex').checked;
+
+			// Call the fusking logic from fusking.js
+			const urls = fuskUrls({
+				prefix,
+				suffix,
+				beginRange,
+				endRange,
+				hex
+			});
+
+			// Output the URLs
+			const outputDiv = document.getElementById('output');
+			outputDiv.innerHTML = ''; // Clear previous output
+
+			// Check if urls is an array
+			if (Array.isArray(urls)) {
+				//urls.forEach(url => {
+				//	const div = document.createElement('div');
+				//	div.textContent = url;
+				//	outputDiv.appendChild(div);
+				//});
+				// Call createGallery and place the returned gallery in the output div
+				const gallery = createGallery(urls);
+				outputDiv.appendChild(gallery);
+			} else {
+				// Handle the case where urls is not an array
+				const div = document.createElement('div');
+				div.textContent = urls; // Assume urls is a string in this case
+				outputDiv.appendChild(div);
+			}
+		});
+
+	</script>
+</body>
+
+</html>
